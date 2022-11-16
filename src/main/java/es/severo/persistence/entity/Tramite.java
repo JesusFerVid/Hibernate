@@ -17,6 +17,10 @@ public class Tramite {
 	@Column(name = "fecha_tramite")
 	private LocalDateTime fecha;
 
+	// Bidireccional
+	@OneToOne(mappedBy = "tramite", cascade = CascadeType.REMOVE)
+	private Presupuesto presupuesto;
+
 	public long getId() {
 		return id;
 	}
@@ -39,5 +43,14 @@ public class Tramite {
 
 	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
+	}
+
+	@Override
+	public String toString() {
+		return "Tramite{" +
+			"id=" + id +
+			", tipo='" + tipo + '\'' +
+			", fecha=" + fecha +
+			'}';
 	}
 }

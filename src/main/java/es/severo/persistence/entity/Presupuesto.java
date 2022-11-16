@@ -12,7 +12,7 @@ public class Presupuesto {
 	@Column(name = "lugar_presupuesto")
 	private String lugarPresupuesto;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "tramite_id")
 	private Tramite tramite;
 
@@ -40,5 +40,14 @@ public class Presupuesto {
 
 	public void setTramite(Tramite tramite) {
 		this.tramite = tramite;
+	}
+
+	@Override
+	public String toString() {
+		return "Presupuesto{" +
+			"id=" + id +
+			", lugarPresupuesto='" + lugarPresupuesto + '\'' +
+			", tramite=" + tramite +
+			'}';
 	}
 }
