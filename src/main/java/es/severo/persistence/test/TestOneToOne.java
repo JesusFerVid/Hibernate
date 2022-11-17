@@ -8,7 +8,6 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class TestOneToOne {

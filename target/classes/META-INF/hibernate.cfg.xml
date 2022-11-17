@@ -8,7 +8,9 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
 
-		<mapping class="es.severo.persistence.entity.Tramite"></mapping>
-		<mapping class="es.severo.persistence.entity.Presupuesto"></mapping>
+		<mapping class="es.severo.persistence.entity.Tramite"/>
+		<mapping class="es.severo.persistence.entity.Presupuesto"/>
+		<mapping class="es.severo.persistence.entity.Libro"/>
+		<mapping class="es.severo.persistence.entity.Capitulo"/>
 	</session-factory>
 </hibernate-configuration>
