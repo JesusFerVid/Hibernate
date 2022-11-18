@@ -2,6 +2,7 @@ package es.severo.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,15 +15,19 @@ public class Persona {
 	@Column(nullable = false)
 	private String nombre;
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(
 		name = "vive_en",
 		joinColumns = @JoinColumn(name = "persona_id"),
 		inverseJoinColumns =  @JoinColumn(name = "direccion_id")
 	)
-	private List<Direccion> direcciones;
+	private List<Direccion> direcciones = new ArrayList<>();
 
 	public Persona() { }
+
+	public Persona(String nombre) {
+		this.nombre = nombre;
+	}
 
 	public Long getId() {
 		return id;
@@ -46,5 +51,13 @@ public class Persona {
 
 	public void setDirecciones(List<Direccion> direcciones) {
 		this.direcciones = direcciones;
+	}
+
+	public void addDireccion(Direccion d) {
+		this.direcciones.add(d);
+	}
+
+	public void removeDireccion(Direccion d) {
+		this.direcciones.remove(d);
 	}
 }
