@@ -12,5 +12,7 @@
 		<mapping class="es.severo.persistence.entity.Presupuesto"/>
 		<mapping class="es.severo.persistence.entity.Libro"/>
 		<mapping class="es.severo.persistence.entity.Capitulo"/>
+		<mapping class="es.severo.persistence.entity.Persona"/>
+		<mapping class="es.severo.persistence.entity.Direccion"/>
 	</session-factory>
 </hibernate-configuration>

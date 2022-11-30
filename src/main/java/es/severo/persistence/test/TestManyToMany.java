@@ -1,17 +1,12 @@
 package es.severo.persistence.test;
 
-import es.severo.persistence.entity.Direccion;
-import es.severo.persistence.entity.Direccion_;
+import es.severo.persistence.dao.GenericDAO;
+import es.severo.persistence.dao.GenericDAOImpl;
+import es.severo.persistence.dao.PersonaDAO;
+import es.severo.persistence.dao.PersonaDAOImpl;
 import es.severo.persistence.entity.Persona;
-import es.severo.persistence.entity.Persona_;
 import es.severo.persistence.util.HibernateUtil;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Join;
-import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
-
-import java.util.List;
 
 public class TestManyToMany {
 	public static void main(String[] args) {
